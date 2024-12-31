@@ -31,3 +31,22 @@ nav h1 {
   text-decoration: underline;
   color: rgb(14 116 144);
 }
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  flex-direction: column;
+  font-weight: bolder;
+
+}
+
+.welcome p {
+  color: rgb(14 116 144);
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+}
+.welcome h1 {
+  font-size: 70px;
+}
