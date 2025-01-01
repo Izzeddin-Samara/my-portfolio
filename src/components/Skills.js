@@ -72,17 +72,18 @@ const Skills = () => {
     ];
 
     return (
-        <div>
+        <div className="skills-container">
             <h1>Skills and Technologies</h1>
             {skillsData.map((category, index) => (
-                <div key={index}>
+                <div key={index} className="skills-category">
                     <h2>{category.category}</h2>
-                    <ul>
+                    <ul className="skills-list">
                         {category.skills.map((skill, skillIndex) => (
-                            <li key={skillIndex}>
+                            <li key={skillIndex} className="skills-list-item">
                                 <img
                                     src={skillIcons[skill]}
                                     alt={skill}
+                                    className="badge-img"
                                 />
                             </li>
                         ))}
