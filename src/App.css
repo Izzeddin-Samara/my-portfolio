@@ -274,6 +274,33 @@ form button:hover {
   
 }
 
+.footer {
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0; 
+  gap: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.social-links a:hover {
+  color: rgb(107, 112, 116);
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+}
+
 
 
 
