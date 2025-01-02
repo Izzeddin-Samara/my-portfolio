@@ -187,6 +187,19 @@ nav h1 {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+.input-error {
+  border: 2px solid red;
+}
+
+.input-valid {
+  border: 2px solid green;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+}
+
 
 
 
