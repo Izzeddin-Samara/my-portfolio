@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const Contact = () => {
         email: '',
         message: '',
     });
+
+    const [successMessage, setSuccessMessage] = useState('');
 
     // Validation functions
     const validateName = (name) => {
@@ -80,6 +83,40 @@ const Contact = () => {
             });
             return;
         }
+        // Send email
+        emailjs
+            .send(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    message: formData.message,
+                },
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+            )
+            .then(
+                (result) => {
+                    setSuccessMessage("Thank you! Your message has been sent successfully.");
+                    setFormData({ name: '', email: '', message: '' });
+                },
+                (error) => {
+                    alert('Failed to send message. Please try again later.');
+                }
+            );
+
+        // Auto-response email
+        emailjs
+            .send(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_AUTORESPONSE_TEMPLATE,
+                {
+                    from_name: formData.name,
+                    to_email: formData.email,
+                },
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+            )
+            .then(() => { }, () => { });
 
 
     };
@@ -90,6 +127,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit}>
                     <h1>Contact Me</h1>
                     <p>Have a project in mind? Let’s connect!<br /> Fill out the form below, and I'll get back to you soon.</p>
+                    {successMessage && <div style={{ color: 'green', fontWeight: 'bolder' }}>{successMessage}</div>}
 
                     {/* Name Field */}
                     <div>
@@ -117,7 +155,7 @@ const Contact = () => {
                             className={errors.email ? 'input-error' : 'input-valid'}
                         />
                         {errors.email && <p className="error-message">{errors.email}</p>}
-                        
+
                     </div>
 
                     {/* Message Field */}
