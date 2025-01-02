@@ -4,9 +4,20 @@ nav {
   justify-content: space-between;
   height: 100px;
   align-items: center;
-  background-color: rgb(217, 217, 217);
+  background-color: rgb(214, 214, 214);
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
+
+nav h1 {
+  margin-left: 30px;
+  color: rgb(14 116 144);
+  font-weight: bolder;
+}
+
+
 .nav-links {
   width: 40%;
   display: flex;
@@ -16,20 +27,55 @@ nav {
   font-size: large;
   font-weight: bold;
 }
-nav h1 {
-  margin-left: 30px;
-  color: rgb(14 116 144);
-  font-weight: bolder;
-}
+
 .nav-links a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
   color: rgb(14 116 144);
+}
+
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  padding-right: 30px; 
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(214, 214, 214);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    text-align: center;
+    margin: 0; 
+  }
+
+  
+  .nav-links.active {
+    display: flex;
+  }
+
+  
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-links li {
+    padding: 1rem;
+    width: 100%;
+  }
 }
 .welcome {
   display: flex;
