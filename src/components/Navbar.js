@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-scroll';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+
     return (
         <div>
             <nav>
                 <h1>Izzeddin Samara</h1>
-                <ul className="nav-links">
+                <div className="hamburger-menu" onClick={toggleMenu}>
+                    {menuOpen ? <FaTimes /> : <FaBars />}
+                </div>
+                <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
                     <li>
                         <Link to="welcomebanner" smooth={true} duration={1000} offset={-100}>
                             Home
