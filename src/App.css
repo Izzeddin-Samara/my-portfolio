@@ -172,24 +172,79 @@ nav h1 {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  height: 70vh;
+  height: auto;
   flex-wrap: wrap;
-  margin-top: 20px;
+  width: 100%;
+  padding: 0 10px; 
+  margin-top: 50px;
 }
 
 .about-body img {
   border-radius: 50%;
-  width: 30%;
-  max-width: 400px;
+  width:20%;
   height: auto;
+  max-width: 100%;
 }
 
 .about-body p {
-  max-width: 800px;
-  text-align: center;
+  width: 50%;
+  text-align: justify;
   font-size: 1.5rem;
   line-height: 1.6;
   margin: 0;
+}
+
+@media screen and (min-width: 930px) and (max-width: 1280px) {
+  .about-body img {
+    width: 35%;
+  }
+  .about-body p {
+    width: 50%;
+    font-size: 23px;
+  }
+}
+
+@media screen and (min-width: 775px) and (max-width: 929px) {
+  .about-body img {
+    width: 30%;
+  }
+  .about-body p {
+    width: 50%;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-body img {
+    width: 50%;  
+  }
+  .about-body p {
+    width: 80%;
+    text-align: justify;
+    font-size: 19px;
+  }
+  .about h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-body p {
+    font-size: 16px; 
+    text-align: justify;
+    width: 90%;      
+    padding: 0 10px;  
+    height: auto;     
+  }
+
+  .about-body img {
+    width: 55%; 
+    margin-bottom: 20px; 
+  }
 }
 
 #skills {
