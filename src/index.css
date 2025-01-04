@@ -4,5 +4,20 @@
 /* Apply the font globally to the body */
 body {
     font-family: 'Poppins', sans-serif !important;
-    background-color: #f8f9fa !important;
+    background-color: #f8f9fa  !important;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-y: auto;
+  }
+  
+  
+  
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
