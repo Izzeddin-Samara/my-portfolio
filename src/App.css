@@ -338,44 +338,6 @@ nav h1 {
     padding: 5px;
   }
 }
-
-.projects {
-  width: 70%;
-  margin: 0 auto;
-}
-.projects h1 {
-  color: rgb(14 116 144);
-  text-align: center;
-}
-
-.container {
-  display: flex;
-  
-}
-
-.project-card {
- width: 100%;
- padding: 10px;
- margin: 10px;
- background-color: hsl(0, 0%, 90%);
- height: 75vh;
- border-radius: 15px;
-
-}
-
-.project-card h2 {
-  text-align: center;
-  color: rgb(14, 116, 144);
-  font-weight: bold;
-}
-#techi {
-  margin-top: 20px
-}
-
-.github-url {
-  text-align: center;
-}
-
 .github-url button {
   background-color: rgb(14, 116, 144);
   padding: 12px 20px;
