@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ const Contact = () => {
     });
 
     const [successMessage, setSuccessMessage] = useState('');
+    const [loading, setLoading] = useState(false); // Added loading state
 
     // Validation functions
     const validateName = (name) => {
@@ -44,7 +46,6 @@ const Contact = () => {
         }
         return ""; // No error
     };
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -83,6 +84,9 @@ const Contact = () => {
             });
             return;
         }
+
+        setLoading(true); // Set loading to true when starting form submission
+
         // Send email
         emailjs
             .send(
@@ -99,9 +103,11 @@ const Contact = () => {
                 (result) => {
                     setSuccessMessage("Thank you! Your message has been sent successfully.");
                     setFormData({ name: '', email: '', message: '' });
+                    setLoading(false); // Set loading to false once submission is complete
                 },
                 (error) => {
                     alert('Failed to send message. Please try again later.');
+                    setLoading(false); // Set loading to false on error
                 }
             );
 
@@ -117,8 +123,6 @@ const Contact = () => {
                 process.env.REACT_APP_EMAILJS_PUBLIC_KEY
             )
             .then(() => { }, () => { });
-
-
     };
 
     return (
@@ -154,7 +158,6 @@ const Contact = () => {
                             className={errors.email ? 'input-error' : 'input-valid'}
                         />
                         {errors.email && <p className="error-message">{errors.email}</p>}
-
                     </div>
 
                     {/* Message Field */}
@@ -170,11 +173,15 @@ const Contact = () => {
                         {errors.message && <p className="error-message">{errors.message}</p>}
                     </div>
 
-                    <button>
-                        Send Message
-                    </button>
-                </form>
-            </div>
+                <button type="submit" disabled={loading}> {/* Disable button while loading */}
+                    {loading ? (
+                        <Spinner animation="border"/>
+                    ) : (
+                        "Send Message"
+                    )}
+                </button>
+            </form>
+        </div>
     );
 };
 
