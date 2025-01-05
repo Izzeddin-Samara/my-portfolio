@@ -16,27 +16,27 @@ const Navbar = () => {
                 </div>
                 <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
                     <li>
-                        <Link to="welcomebanner" smooth={true} duration={1000} offset={-100}>
+                        <Link to="welcomebanner" smooth={true} duration={1000} offset={-100} className="nav-link">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link to="about" smooth={true} duration={1000} offset={-100}>
+                        <Link to="about" smooth={true} duration={500} offset={-220} className="nav-link">
                             About
                         </Link>
                     </li>
                     <li>
-                        <Link to="skills" smooth={true} duration={1000} offset={-100}>
+                        <Link to="skills" smooth={true} duration={500} offset={-100} className="nav-link">
                             Skills
                         </Link>
                     </li>
                     <li>
-                        <Link to="projects" smooth={true} duration={1000} offset={-100}>
+                        <Link to="projects" smooth={true} duration={500} offset={-140} className="nav-link">
                             Projects
                         </Link>
                     </li>
                     <li>
-                        <Link to="contact" smooth={true} duration={1000} offset={-100}>
+                        <Link to="contact" smooth={true} duration={500} offset={90} className="nav-link">
                             Contact
                         </Link>
                     </li>
