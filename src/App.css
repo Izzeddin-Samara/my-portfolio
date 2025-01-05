@@ -77,6 +77,14 @@ nav h1 {
     width: 100%;
   }
 }
+@media screen and (min-width: 770px) and (max-width: 975px) {
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-right: 10px;
+  }
+}
 
 .welcome {
   display: flex;
