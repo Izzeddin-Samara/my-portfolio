@@ -15,4 +15,17 @@ Welcome to my personal portfolio project! This is a web application showcasing m
 - **Hover Effects**:  
    I added hover effects to links and buttons to create a more interactive and dynamic user experience.
 
+  ## 🛠️ Technology Stack
+
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![EmailJS](https://img.shields.io/badge/EmailJS-FF9900?style=for-the-badge&logo=emailjs&logoColor=white)
+
+
+
+
+
+
+
 
