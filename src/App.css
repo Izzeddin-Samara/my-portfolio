@@ -415,6 +415,7 @@ form {
 
 form h1 {
   color: rgb(14 116 144);
+  font-weight: bolder;
 }
 
 form p {
