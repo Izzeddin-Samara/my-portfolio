@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Spinner from 'react-bootstrap/Spinner';
+import { Modal, Button } from 'react-bootstrap';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -15,8 +16,8 @@ const Contact = () => {
         message: '',
     });
 
-    const [successMessage, setSuccessMessage] = useState('');
-    const [loading, setLoading] = useState(false); // Added loading state
+    const [modalContent, setModalContent] = useState('loading'); // Tracks modal state ('loading' or 'success')
+    const [showModal, setShowModal] = useState(false); // Controls modal visibility
 
     // Validation functions
     const validateName = (name) => {
@@ -49,8 +50,6 @@ const Contact = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-
-        // Update form data
         setFormData({
             ...formData,
             [name]: value,
@@ -62,7 +61,6 @@ const Contact = () => {
         if (name === "email") error = validateEmail(value);
         if (name === "message") error = validateMessage(value);
 
-        // Update errors
         setErrors({
             ...errors,
             [name]: error,
@@ -85,7 +83,8 @@ const Contact = () => {
             return;
         }
 
-        setLoading(true); // Set loading to true when starting form submission
+        setShowModal(true); // Show the modal
+        setModalContent('loading'); // Show spinner initially
 
         // Send email
         emailjs
@@ -101,13 +100,12 @@ const Contact = () => {
             )
             .then(
                 (result) => {
-                    setSuccessMessage("Thank you! Your message has been sent successfully.");
-                    setFormData({ name: '', email: '', message: '' });
-                    setLoading(false); // Set loading to false once submission is complete
+                    setModalContent('success'); // Switch to success message
+                    setFormData({ name: '', email: '', message: '' }); // Clear the form
                 },
                 (error) => {
-                    alert('Failed to send message. Please try again later.');
-                    setLoading(false); // Set loading to false on error
+                    alert('Failed to send the message. Please try again later.');
+                    setShowModal(false);
                 }
             );
 
@@ -125,12 +123,15 @@ const Contact = () => {
             .then(() => { }, () => { });
     };
 
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
-            <div className='form-container'>
-                <form onSubmit={handleSubmit}>
+        <div className='form-container'>
+            <form onSubmit={handleSubmit}>
                     <h1>Contact Me</h1>
                     <p>Have a project in mind? Let’s connect!<br /> Fill out the form below, and I'll get back to you soon.</p>
-                    {successMessage && <div style={{ color: 'green', fontWeight: 'bolder' }}>{successMessage}</div>}
 
                     {/* Name Field */}
                     <div>
@@ -173,14 +174,32 @@ const Contact = () => {
                         {errors.message && <p className="error-message">{errors.message}</p>}
                     </div>
 
-                <button type="submit" disabled={loading}> {/* Disable button while loading */}
-                    {loading ? (
-                        <Spinner animation="border"/>
-                    ) : (
-                        "Send Message"
-                    )}
-                </button>
+                <button type="submit">Send Message</button>
             </form>
+
+            {/* Modal */}
+            <Modal show={showModal} onHide={handleCloseModal} centered>
+                <Modal.Body>
+                    {modalContent === 'loading' ? (
+                        <div style={{ textAlign: 'center' }}>
+                            <Spinner animation="border" role="status" />
+                            <p style={{ marginTop: '10px' }}>Sending your message...</p>
+                        </div>
+                    ) : (
+                        <div style={{ textAlign: 'center' }}>
+                            <i className="bi bi-check-circle-fill" style={{ fontSize: '2rem', color: 'green' }}></i>
+                            <p style={{ marginTop: '10px' }}>Your message has been sent successfully!</p>
+                        </div>
+                    )}
+                </Modal.Body>
+                <Modal.Footer>
+                    {modalContent === 'success' && (
+                        <Button variant="secondary" onClick={handleCloseModal}>
+                            Close
+                        </Button>
+                    )}
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 };
