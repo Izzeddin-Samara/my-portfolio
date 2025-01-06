@@ -21,12 +21,12 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="about" smooth={true} duration={500} offset={-220} className="nav-link">
+                        <Link to="about" smooth={true} duration={500} offset={-235} className="nav-link">
                             About
                         </Link>
                     </li>
                     <li>
-                        <Link to="skills" smooth={true} duration={500} offset={-100} className="nav-link">
+                        <Link to="skills" smooth={true} duration={500} offset={-120} className="nav-link">
                             Skills
                         </Link>
                     </li>
