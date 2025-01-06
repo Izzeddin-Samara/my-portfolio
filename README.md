@@ -22,6 +22,25 @@ Welcome to my personal portfolio project! This is a web application showcasing m
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![EmailJS](https://img.shields.io/badge/EmailJS-FF9900?style=for-the-badge&logo=emailjs&logoColor=white)
 
+## :wrench: Installation Instructions
+1. :arrow_down: Clone the repository:
+   ```bash
+   git clone https://github.com/Izzeddin-Samara/my-portfolio
+   ```
+2. :file_folder: Navigate to the project folder:
+   ```bash
+   cd my-portfolio
+   ```
+3. :arrow_up: Install dependencies:
+   ```bash
+   npm install
+   ```
+4. :computer: Start the development server:
+   ```bash
+   npm start
+   ```
+
+
 
 
 
