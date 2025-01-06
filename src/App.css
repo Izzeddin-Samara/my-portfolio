@@ -2,9 +2,9 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 70px;
   align-items: center;
-  background-color: rgb(214, 214, 214);
+  background: linear-gradient(to right, rgb(179, 232, 247), #d1f3ff, #ffffff);
   position: fixed;
   top: 0;
   left: 0;
@@ -15,6 +15,7 @@ nav h1 {
   margin-left: 30px;
   color: rgb(14 116 144);
   font-weight: bolder;
+  margin-top: 10px;
 }
 
 
