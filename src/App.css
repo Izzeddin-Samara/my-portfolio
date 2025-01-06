@@ -257,6 +257,10 @@ nav h1 {
   }
 }
 
+.custom-card {
+  background-color: #f6f8fa;
+}
+
 #skills {
   color: black;
   margin: 0 auto;

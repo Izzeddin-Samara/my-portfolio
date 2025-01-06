@@ -5,16 +5,16 @@ import Card from 'react-bootstrap/Card';
 
 const ProjectCard = ({ icon, title, overview, stack, githubLink }) => (
     <div className="col-md-6 col-lg-6 col-xl-4 mb-4 d-flex align-items-stretch mt-5">
-        <Card className="custom-card h-100">
+        <Card className="custom-card h-100 p-3">
             <Card.Body className="d-flex flex-column">
                 <Card.Title>
                     <h2 className="text-center">{icon} {title}</h2>
                 </Card.Title>
                 <div className="flex-grow-1">
                     <Card.Text>
-                        <h6>Overview</h6>
+                        <h6><strong>Overview</strong></h6>
                         <p>{overview}</p>
-                        <h6>Technology Stack</h6>
+                        <h6><strong>Technology Stack</strong></h6>
                         <ul>
                             {stack.map((tech, index) => (
                                 <li key={index}><p>{tech}</p></li>
@@ -60,8 +60,8 @@ const Projects = () => {
     ];
 
     return (
-        <div>
-            <h1 className="text-center">Projects</h1>
+        <div className="mt-5">
+            <h1 className="text-center projects-head">Projects <i class="bi bi-folder-fill"></i></h1>
             <div className="container">
                 <div className="row justify-content-center">
                     {projects.map((project, index) => (
