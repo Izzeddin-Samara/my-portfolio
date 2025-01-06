@@ -130,7 +130,7 @@ const Contact = () => {
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit}>
-                    <h1>Contact Me</h1>
+                    <h1>Contact Me <i class="bi bi-chat-dots-fill"></i></h1>
                     <p>Have a project in mind? Let’s connect!<br /> Fill out the form below, and I'll get back to you soon.</p>
 
                     {/* Name Field */}
