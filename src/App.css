@@ -172,7 +172,6 @@ nav h1 {
 
 .about h1 {
   text-align: center;
-  font-size: 3rem;
   color: rgb(14, 116, 144);
   font-weight: bolder;
 }
@@ -305,7 +304,7 @@ nav h1 {
   justify-content: center;
   gap: 10px;
   list-style: none;
-  padding: 15px;
+  padding: 5px;
 }
 
 .skills-list-item {
