@@ -39,6 +39,10 @@ Welcome to my personal portfolio project! This is a web application showcasing m
    ```bash
    npm start
    ```
+ ## 🌐 Live Demo
+ This project is deployed with [Vercel](https://vercel.com/). Check out the live version of my portfolio here:
+ [https://my-portfolio-e727.vercel.app/](https://my-portfolio-e727.vercel.app/)
+
 
 
 
