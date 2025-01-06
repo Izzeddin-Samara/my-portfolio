@@ -4,7 +4,7 @@
 /* Apply the font globally to the body */
 body {
     font-family: 'Poppins', sans-serif !important;
-    background-color: #f8f9fa  !important;
+    background: linear-gradient(to right, #ffffff, #d1f2ff, #ffffff) !important
 }
 
 html, body {
