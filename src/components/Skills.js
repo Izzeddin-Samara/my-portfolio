@@ -71,7 +71,8 @@ const Skills = () => {
 
     return (
         <div className="skills-container">
-            <h1>Skills and Technologies</h1>
+            <h1>Skills and Technologies <i class="bi bi-braces"></i></h1>
+            <div className="skills">
             {skillsData.map((category, index) => (
                 <div key={index} className="skills-category">
                     <h2>{category.category}</h2>
@@ -88,6 +89,9 @@ const Skills = () => {
                     </ul>
                 </div>
             ))}
+
+            </div>
+            
         </div>
     );
 };
