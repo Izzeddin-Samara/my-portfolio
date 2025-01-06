@@ -521,6 +521,10 @@ form button:hover {
   height: 30px;
 }
 
+.footer p {
+  color: rgb(10, 131, 165);
+}
+
 .projects-head {
   color: rgb(10, 131, 165);
   font-weight: bolder;
