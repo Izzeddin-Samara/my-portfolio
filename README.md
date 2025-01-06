@@ -43,6 +43,14 @@ Welcome to my personal portfolio project! This is a web application showcasing m
  This project is deployed with [Vercel](https://vercel.com/). Check out the live version of my portfolio here:
  [https://my-portfolio-e727.vercel.app/](https://my-portfolio-e727.vercel.app/)
 
+ ## 📬 Contact
+
+Feel free to reach out to me via the following:
+
+- **Email**: [izzidinsamara@gmail.com](mailto:izzidinsamara@gmail.com)
+- **LinkedIn**: [https://www.linkedin.com/in/izzeddin-samara/](https://www.linkedin.com/in/izzeddin-samara/)
+
+
 
 
 
