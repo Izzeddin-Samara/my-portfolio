@@ -49,7 +49,7 @@ const Projects = () => {
         {
             icon: <FaTools aria-label="Technicians Hub Icon" />,
             title: "Technicians Hub",
-            overview: " A web application that connects users with professional technicians, It features appointments booking, reviews, and contact form  across a variety of trades including electricians and more",
+            overview: " A web application that connects users with professional technicians across a variety of trades including electricians and more, It features appointments booking, reviews, and contact form",
             stack: [
                 "Frontend: HTML, CSS, JavaScript and Bootstrap",
                 "Backend: Django / Python",
