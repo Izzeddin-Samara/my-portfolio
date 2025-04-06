@@ -1,6 +1,8 @@
 import React from "react";
 import { GiMuscleUp } from "react-icons/gi";
 import { FaTools } from "react-icons/fa";
+import { IoMdRocket } from "react-icons/io";
+
 import Card from 'react-bootstrap/Card';
 
 const ProjectCard = ({ icon, title, overview, stack, githubLink }) => (
@@ -56,6 +58,16 @@ const Projects = () => {
                 "Database: MySQL"
             ],
             githubLink: "https://github.com/talakh1798/Technicians-Hub"
+        },
+        {
+            icon: <IoMdRocket aria-label="TechNova Icon" />,
+            title: "TechNova",
+            overview: "Technova is a modern software services website, offering a range of digital solutions including custom software development, cloud services, UI/UX design, cybersecurity, IT consulting, and digital transformation. It showcases company's services in a clean, responsive, and professional layout.",
+            stack: [
+                "Frontend: React, Tailwind CSS",
+                
+            ],
+            githubLink: "https://github.com/Izzeddin-Samara/TechNova"
         }
     ];
 
